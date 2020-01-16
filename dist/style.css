@@ -1,0 +1,154 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+
+}
+
+body, html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CUSTOM CSS BELOW THIS LINE */
+::selection {
+  background: none;
+  color: none;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(175, 175, 175);
+}
+
+/*
+  =============
+  THE FRAME
+  =============
+*/
+.frame {
+  height: 70%;
+  width: 80%;
+  border: 10px solid red;
+  background-color: rgb(238, 207, 207);
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+}
+
+.arrow {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.slides {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr repeat(3, 2.5fr) 1fr;
+  grid-row: 1 / span 1;
+  border-bottom: 10px solid red;
+  height: 100px;
+  background-color: rgb(122, 201, 69);
+}
+
+.slider-left {
+  grid-column: 1 / span 1;
+}
+
+.slider-mid {
+  grid-column: 2 / span 1;
+}
+
+.slider-right {
+  grid-column: 3 / span 1;
+}
+
+.slider-image {
+  max-height: 90%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.image-box {
+  display: grid;
+  grid-column: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  grid-column: 2 / span 3;
+}
+
+.image-left, .slides-left {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.image-right, .slides-right {
+  grid-column: -2 / span 1;
+    grid-row: 1 / span 1;
+
+}
+
+.picture {
+  display: grid;
+  align-items: center;
+  height: 100%;
+  justify-items: center;
+  grid-template-columns: 1fr 6fr 1fr;
+  background-color: rgb(255, 255, 255);
+}
+
+.image {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid black;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
