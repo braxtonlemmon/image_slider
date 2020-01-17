@@ -1,12 +1,6 @@
 import { images } from './images.js';
 
 const renderImage = (() => {
-  const _clearImage = () => {
-    const picture = document.querySelector('.picture');
-    const image = document.querySelector('.image');
-    picture.removeChild(image);
-  }
-
   const makeImage = (index) => {
     const imageBox = document.querySelector('.picture');
     if (imageBox.childElementCount > 2) _clearImage();
@@ -33,6 +27,14 @@ const renderImage = (() => {
   const getImageIndex = (id) => {
     const image = images.find((img) => { return img.id === id });
     return images.indexOf(image);
+  }
+
+  // PRIVATE
+
+  const _clearImage = () => {
+    const picture = document.querySelector('.picture');
+    const image = document.querySelector('.image');
+    picture.removeChild(image);
   }
   
   return { 
