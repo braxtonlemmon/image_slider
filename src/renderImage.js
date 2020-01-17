@@ -1,17 +1,23 @@
 import { images } from './images.js';
 
 const renderImage = (() => {
-  const makeImage = function makeImageFunction() {
+  const _clearImage = () => {
+    const picture = document.querySelector('.picture');
+    const image = document.querySelector('.image');
+    picture.removeChild(image);
+  }
+
+  const makeImage = (index) => {
     const imageBox = document.querySelector('.picture');
+    if (imageBox.childElementCount > 2) _clearImage();
     const image = document.createElement('img');
     image.classList.add('image');
-    image.dataset.id = images[0].id;
-    image.src = images[0].src;
+    image.dataset.id = images[index].id;
+    image.src = images[index].src;
     imageBox.appendChild(image);
   }
 
   const swapImage = (direction) => {
-    console.log('hi');
     const image = document.querySelector('.image');
     const lastIndex = images.length - 1;
     let index = getImageIndex(parseInt(image.dataset.id));
@@ -21,7 +27,7 @@ const renderImage = (() => {
     } else if (direction === 'right') {
       newIndex = (index === lastIndex ? 0 : index + 1);
     }
-    changeImageDOM(newIndex);
+    makeImage(newIndex);
   }
   
   const getImageIndex = (id) => {
@@ -29,19 +35,10 @@ const renderImage = (() => {
     return images.indexOf(image);
   }
   
-  const changeImageDOM = (index) => {
-    const imageDOM = document.querySelector('.image');
-    const imageDB = images[index];
-    imageDOM.src = imageDB.src;
-    imageDOM.alt = imageDB.alt;
-    imageDOM.dataset.id = imageDB.id;
-  }
-
   return { 
     makeImage,
     swapImage,
     getImageIndex,
-    changeImageDOM 
   }
 })();
 

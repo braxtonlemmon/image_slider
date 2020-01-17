@@ -34,14 +34,14 @@ const eventController = (() => {
           const id = parseInt(e.target.attributes[1].value);
           console.log(id);
           const index = renderImage.getImageIndex(id);
-          renderImage.changeImageDOM(index);
+          renderImage.makeImage(index);
           renderDots.render();
           }
           break;
         case classList.contains('dot'):
           {
           const index = parseInt(e.target.attributes[1].value);
-          renderImage.changeImageDOM(index);
+          renderImage.makeImage(index);
           renderDots.render();
           }
           break;
