@@ -8,6 +8,11 @@ renderSlider.makeImages(0);
 renderDots.render();
 eventController.listen();
 
+setInterval(function() { 
+  renderImage.swapImage('right')
+  renderDots.render(); 
+}, 5000);
+
 
 
 

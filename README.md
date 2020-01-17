@@ -1,0 +1,2 @@
+# Image Slider
+Project from The Odin Project JavaScript [curriculum](https://www.theodinproject.com/lessons/dynamic-user-interface-interactions) that involves creating a virtual picture frame that allows the user to move through a slideshow by clicking left and right arrows or using a slideshow status bar that indicates the progression through the slideshow. 

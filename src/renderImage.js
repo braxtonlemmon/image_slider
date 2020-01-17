@@ -11,6 +11,7 @@ const renderImage = (() => {
   }
 
   const swapImage = (direction) => {
+    console.log('hi');
     const image = document.querySelector('.image');
     const lastIndex = images.length - 1;
     let index = getImageIndex(parseInt(image.dataset.id));
