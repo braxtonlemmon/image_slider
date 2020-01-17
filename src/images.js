@@ -8,6 +8,8 @@ const images = [
   { id: 4, src: 'https://i.picsum.photos/id/23/600/800.jpg', alt: 'forest stream' },
   { id: 5, src: 'https://i.picsum.photos/id/89/600/800.jpg', alt: 'forest stream' },
   { id: 6, src: 'https://i.picsum.photos/id/128/600/800.jpg', alt: 'forest stream' },
+  { id: 7, src: 'https://i.picsum.photos/id/131/600/800.jpg', alt: 'forest stream' },
+
 ]
 
 export { images }

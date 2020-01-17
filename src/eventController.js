@@ -1,5 +1,6 @@
 import { renderImage } from './renderImage.js';
 import { renderSlider } from './renderSlider.js';
+import { renderDots } from './renderDots.js';
 
 const eventController = (() => {
   const listen = () => {
@@ -9,11 +10,13 @@ const eventController = (() => {
         case classList.contains('image-left'):
           {
             renderImage.swapImage('left');
+            renderDots.render();
           }
           break;
         case classList.contains('image-right'):
           {
             renderImage.swapImage('right');
+            renderDots.render();
           }
           break;
         case classList.contains('slides-left'):
@@ -32,6 +35,14 @@ const eventController = (() => {
           console.log(id);
           const index = renderImage.getImageIndex(id);
           renderImage.changeImageDOM(index);
+          renderDots.render();
+          }
+          break;
+        case classList.contains('dot'):
+          {
+          const index = parseInt(e.target.attributes[1].value);
+          renderImage.changeImageDOM(index);
+          renderDots.render();
           }
           break;
       }

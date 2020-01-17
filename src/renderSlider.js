@@ -11,11 +11,9 @@ const renderSlider = (() => {
 
     if (direction === 'left') {
       let index = renderImage.getImageIndex(parseInt(imageLeft.dataset.id));
-      console.log(index);
       newIndex = (index === 0 ? 0 : index - 1);
     } else if (direction === 'right') {
       let index = renderImage.getImageIndex(parseInt(imageRight.dataset.id));
-      console.log(index);
       newIndex = (index === lastIndex ? lastIndex - 2 : index - 1);
     }
     makeImages(newIndex);
@@ -49,7 +47,6 @@ const renderSlider = (() => {
       imageBox.removeChild(imageBox.lastElementChild);
     }
   }
-
 
   return { 
     makeImages,
